@@ -431,9 +431,10 @@ ul {
   font-weight: 600;
   font-size: 12px;
   border-radius: var(--border-radius-sm);
-.btn-download__arrow {
-  margin-left: 10px;
-  font-size: 12px;
+  .btn-download__arrow {
+    margin-left: 10px;
+    font-size: 12px;
+  }
 }
 
 /* =========================================
