@@ -26,11 +26,11 @@
 
   /* --- EFFECTS --- */
   --transition: 0.3s ease;
-  --border-radius-sm: 4px;
+  --border-radius-sm: 6px;
   --border-radius-md: 8px;
-  --border-radius-lg: 20px;
-  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  --box-shadow-strong: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --border-radius-lg: 24px;
+  --box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  --box-shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* --- RESET & GLOBAL --- */
@@ -67,16 +67,15 @@ ul {
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* Typography */
 .section-title {
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text-heading);
-  line-height: 1.3;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 32px;
 }
 .section-title--highlight {
   color: var(--secondary-color);
@@ -89,8 +88,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 .section-subtitle_2 {
   border-bottom: 2px solid var(--primary-color);
@@ -204,6 +202,46 @@ ul {
   color: var(--white);
 }
 
+/* --- LOGO BRANDING --- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Khoảng cách giữa icon và chữ */
+  text-decoration: none; /* Bỏ gạch chân nếu thẻ a */
+}
+
+/* Định dạng kích thước Icon */
+.logo-img {
+  height: 48px; /* Chiều cao logo, bạn có thể chỉnh to nhỏ tùy ý */
+  width: auto; /* Giữ tỷ lệ ảnh không bị méo */
+  object-fit: contain;
+}
+
+/* Khối chứa chữ */
+.logo-text {
+  display: flex;
+  flex-direction: column; /* Xếp chữ thành 2 dòng */
+  line-height: 1.1; /* Khoảng cách giữa 2 dòng */
+}
+
+/* Dòng chữ trên: KHOÁNG SẢN */
+.logo-text__top {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dòng chữ dưới: RẠNG ĐÔNG */
+.logo-text__bottom {
+  font-size: 18px; /* Chữ dưới to hơn */
+  font-weight: 800; /* Nét đậm hơn */
+  color: var(--secondary-color); /* Màu vàng cam (lấy từ biến) */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -279,7 +317,8 @@ ul {
   align-items: center;
 }
 .about__media {
-  flex: 1;
+  width: 596px;
+  height: 580px;
   position: relative;
   padding-bottom: 30px;
   padding-right: 20px;
@@ -287,50 +326,51 @@ ul {
 
 /* [EDIT] Chỉnh kích thước ảnh About */
 .about__img {
-  width: 100%;
-  height: 450px; /* <--- Chiều cao ảnh */
+  width: 536px; /* <--- Chiều rộng ảnh */
+  height: 536px; /* <--- Chiều cao ảnh */
   border-radius: var(--border-radius-lg);
   object-fit: cover;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-strong);
 }
 .about__quote-box {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 324px;
+  left: 340px;
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 30px;
-  width: 300px;
-  border-radius: 15px;
+  padding: 32px;
+  width: 256px;
+  height: 256px;
+  border-radius: var(--border-radius-lg);
   border: 8px solid var(--white);
   box-shadow: var(--box-shadow-strong);
 }
 .about__quote-icon {
-  font-size: 60px;
-  line-height: 1;
+  font-size: 48px;
+  line-height: 0.8;
   color: var(--secondary-color);
-  font-family: serif;
-  margin-bottom: 10px;
+  font-weight: 800;
   display: block;
 }
 .about__quote-text {
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
-  margin-bottom: 15px;
+  padding-bottom: 16px;
 }
 .about__quote-author {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
-  opacity: 0.9;
+  color: var(--secondary-color);
 }
 
 .about__content {
-  flex: 1.1;
+  width: 596px;
+  height: 580px;
 }
 .about__desc {
   color: var(--text-light);
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   text-align: justify;
 }
 
@@ -338,7 +378,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 .features__item {
   display: flex;
@@ -372,14 +412,13 @@ ul {
   background: var(--secondary-color);
 }
 .features__label {
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: bold;
   color: var(--text-heading);
   display: block;
-  margin-bottom: 5px;
 }
 .features__text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-light);
 }
 
@@ -390,12 +429,11 @@ ul {
   color: var(--white);
   padding: 12px 25px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: var(--border-radius-sm);
-}
 .btn-download__arrow {
   margin-left: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* =========================================
@@ -1002,5 +1040,16 @@ ul {
   .contact-form__row {
     flex-direction: column;
     gap: 0;
+  }
+}
+@media (max-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+  .logo-text__top {
+    font-size: 11px;
+  }
+  .logo-text__bottom {
+    font-size: 16px;
   }
 }
