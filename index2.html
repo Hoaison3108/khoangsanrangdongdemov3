@@ -4,30 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giao diện Giới thiệu Công ty - Khoáng Sản Rạng Đông</title>
-    <link rel="stylesheet" href="./assets/css/style2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Công Ty Khoáng Sản Rạng Đông - Vật Liệu Xây Dựng Bền Vững</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
     <header class="hero">
         <div class="hero__overlay"></div>
+
         <nav class="navbar">
-            <div class="navbar__container">
-                <div class="navbar__logo">
-                    <img src="https://via.placeholder.com/150x50" alt="Logo Rạng Đông">
+            <div class="container navbar__container">
+                <a href="#" class="navbar__logo">
+                    <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/LOGO%20RDG%20Final%20new.png?raw=true"
+                        alt="Logo Rạng Đông" class="logo-img">
+
+                    <div class="logo-text">
+                        <span class="logo-text__top">KHOÁNG SẢN</span>
+                        <span class="logo-text__bottom">RẠNG ĐÔNG</span>
+                    </div>
+                </a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
                 <ul class="navbar__links">
                     <li><a href="#" class="navbar__link navbar__link--active">TRANG CHỦ</a></li>
-                    <li><a href="#" class="navbar__link">GIỚI THIỆU</a></li>
-                    <li><a href="#" class="navbar__link">SẢN PHẨM</a></li>
-                    <li><a href="#" class="navbar__link">QUY TRÌNH</a></li>
-                    <li><a href="#" class="navbar__link">DỰ ÁN</a></li>
-                    <li><a href="#" class="navbar__link">TIN TỨC</a></li>
+                    <li><a href="#about" class="navbar__link">GIỚI THIỆU</a></li>
+                    <li><a href="#products" class="navbar__link">SẢN PHẨM</a></li>
+                    <li><a href="#projects" class="navbar__link">DỰ ÁN</a></li>
+                    <li><a href="#news" class="navbar__link">TIN TỨC</a></li>
+                    <li><a href="#contact" class="navbar__link">LIÊN HỆ</a></li>
                 </ul>
-                <a href="#" class="btn btn--quote">BÁO GIÁ NGAY</a>
+                <a href="#contact" class="btn btn--quote">BÁO GIÁ NGAY</a>
             </div>
         </nav>
 
@@ -49,7 +62,7 @@
         <div class="container about__container">
             <div class="about__media">
                 <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/DJI_0057.JPG?raw=true"
-                    alt="Toàn cảnh khu vực sản xuất" class="about__img">
+                    alt="Toàn cảnh Khuôn viên" class="about__img">
 
                 <div class="about__quote-box">
                     <span class="about__quote-icon">“</span>
@@ -61,35 +74,33 @@
 
             <div class="about__content">
                 <h4 class="section-subtitle_2">VỀ CHÚNG TÔI</h4>
-                <h2 class="section-title">Công Ty TNHH Khoáng Sản <br> Rạng Đông</h2>
+                <h2 class="section-title section-title--default">Công Ty TNHH Khoáng Sản <br> Rạng Đông</h2>
 
                 <p class="about__desc">
                     Công ty TNHH Khoáng sản Rạng Đông được thành lập và hoạt động theo giấy chứng nhận đăng ký kinh
-                    doanh số 3401063933 do Sở kế hoạch và Đầu tư tỉnh Bình Thuận cấp... Chúng tôi cam kết mang lại những
+                    doanh số 3401063933 do Sở kế hoạch và Đầu tư tỉnh Bình Thuận cấp, đăng ký lần đầu ngày 26/11/2013,
+                    là Công ty thành viên thuộc Tập đoàn Rạng Đông. Hoạt động trong lĩnh vực Khai thác khoáng sản; Sản
+                    xuất vật liệu xây dựng; Sản xuất bê tông và các sản phẩm từ xi măng; Sửa chữa gia công cơ khí; Xây
+                    dựng các công trình giao thông, thủy lợi, dân dụng, công nghiệp.... Chúng tôi cam kết mang lại những
                     giá trị thực chất thông qua chất lượng sản phẩm và tinh thần phục vụ tận tâm.
                 </p>
 
                 <div class="features">
                     <div class="features__item">
-                        <div class="features__icon features__icon--blue">
-                            <span class="dot"></span>
-                        </div>
+                        <div class="features__icon features__icon--blue"><span class="dot"></span></div>
                         <div class="features__info">
                             <strong class="features__label">TIÊU CHUẨN ISO</strong>
                             <span class="features__text">Đạt chứng chỉ ISO 9001:2015 cho mọi quy trình.</span>
                         </div>
                     </div>
                     <div class="features__item">
-                        <div class="features__icon features__icon--yellow">
-                            <span class="dot"></span>
-                        </div>
+                        <div class="features__icon features__icon--yellow"><span class="dot"></span></div>
                         <div class="features__info">
                             <strong class="features__label">KHAI THÁC XANH</strong>
                             <span class="features__text">Giảm thiểu tác động môi trường theo tiêu chuẩn.</span>
                         </div>
                     </div>
                 </div>
-
                 <a href="#" class="btn-download">
                     TẢI HỒ SƠ NĂNG LỰC <span class="btn-download__arrow">■</span>
                 </a>
@@ -99,13 +110,14 @@
 
     <section id="products" class="products">
         <div class="container">
-            <div class="section-header text-center">
+            <div class="section-header">
                 <h4 class="section-subtitle">DANH MỤC CUNG ỨNG</h4>
-                <h2 class="section-title">SẢN PHẨM & <span class="section-title--highlight">NĂNG LỰC CUNG ỨNG</span>
+                <h2 class=" section-title">SẢN PHẨM & <span class="section-title--highlight">NĂNG LỰC CUNG
+                        ỨNG</span>
                 </h2>
+                <div class="section-line"></div>
                 <p class="section-desc">Chúng tôi đầu tư hệ thống máy móc hiện đại nhất để đáp ứng các yêu cầu kỹ thuật
-                    phức
-                    tạp từ các dự án trọng điểm quốc gia.</p>
+                    phức tạp từ các dự án trọng điểm quốc gia.</p>
             </div>
 
             <div class="products__grid">
@@ -129,7 +141,7 @@
 
                 <article class="product-card">
                     <div class="product-card__media">
-                        <img src="https://plus.unsplash.com/premium_photo-1675543163354-e4dc1f541330?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        <img src="https://plus.unsplash.com/premium_photo-1675543163354-e4dc1f541330?q=80&w=1074&auto=format&fit=crop"
                             alt="Đá xây dựng" class="product-card__img">
                         <span class="badge badge--blue">KHAI THÁC TRỰC TIẾP</span>
                     </div>
@@ -138,8 +150,8 @@
                         <p class="product-card__desc">Cung ứng đá 1x2, 2x4, 4x6 và đá các loại sản phẩm khác. Sản phẩm
                             sạch, ít tạp chất, độ bền nén cao đạt chuẩn ISO.</p>
                         <ul class="product-card__specs">
-                            <li>Độ sụt ổn định, kiểm soát nhiệt tốt</li>
-                            <li>Trữ lượng khai thác ....m3/năm</li>
+                            <li>Độ sụt ổn định</li>
+                            <li>Trữ lượng khai thác lớn</li>
                         </ul>
                         <a href="#" class="product-card__link">XEM CHI TIẾT</a>
                     </div>
@@ -147,7 +159,7 @@
 
                 <article class="product-card">
                     <div class="product-card__media">
-                        <img src="https://plus.unsplash.com/premium_photo-1682724033013-3abefffb41ad?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        <img src="https://plus.unsplash.com/premium_photo-1682724033013-3abefffb41ad?q=80&w=1471&auto=format&fit=crop"
                             alt="Gạch không nung" class="product-card__img">
                         <span class="badge badge--green">SẢN PHẨM XANH</span>
                     </div>
@@ -156,7 +168,7 @@
                         <p class="product-card__desc">Gạch Block, gạch vỉa hè Terrazzo với đa dạng mẫu mã và màu sắc. Độ
                             bền cao, cách âm, cách nhiệt vượt trội.</p>
                         <ul class="product-card__specs">
-                            <li>Thân thiện môi trường, thi công nhanh</li>
+                            <li>Thân thiện môi trường</li>
                             <li>Đáp ứng mọi kích thước đặt hàng</li>
                         </ul>
                         <a href="#" class="product-card__link">XEM CHI TIẾT</a>
@@ -171,10 +183,11 @@
             <div class="workflow__header">
                 <div class="workflow__header-left">
                     <h4 class="section-subtitle">CHUYÊN NGHIỆP VÀ TẬN TÂM</h4>
-                    <h2 class="section-title">QUY TRÌNH LÀM VIỆC</h2>
+                    <h2 class="section-title section-title--default">QUY TRÌNH LÀM VIỆC</h2>
                 </div>
                 <div class="workflow__header-right">
-                    <p>Chúng tôi tối ưu hóa mọi công đoạn để đảm bảo chất lượng vật liệu tốt nhất đến chân công trình.
+                    <p class="workflow__desc-text">Chúng tôi tối ưu hóa mọi công đoạn để đảm bảo chất lượng vật liệu tốt
+                        nhất đến chân công trình.
                     </p>
                 </div>
             </div>
@@ -189,20 +202,19 @@
                 <div class="workflow__item">
                     <span class="workflow__number">02</span>
                     <h3 class="workflow__title">Kiểm tra đầu vào</h3>
-                    <p class="workflow__desc">Đội ngũ kỹ sư khảo sát thực tế và tư vấn mác vật liệu phù hợp nhất cho
-                        công trình.</p>
+                    <p class="workflow__desc">Nguyên liệu đầu vào cát, đá, xi măng được kiểm định nghiêm ngặt</p>
                 </div>
                 <div class="workflow__item">
                     <span class="workflow__number">03</span>
                     <h3 class="workflow__title">Sản xuất & Giám sát</h3>
-                    <p class="workflow__desc">Đội ngũ kỹ sư khảo sát thực tế và tư vấn mác vật liệu phù hợp nhất cho
-                        công trình.</p>
+                    <p class="workflow__desc">Vận hành tự động hóa với sự giám sát chặt chẽ của các kỹ thuật viên giàu
+                        kinh nghiệm.</p>
                 </div>
                 <div class="workflow__item">
                     <span class="workflow__number">04</span>
                     <h3 class="workflow__title">Vận chuyển 24/7</h3>
-                    <p class="workflow__desc">Đội ngũ kỹ sư khảo sát thực tế và tư vấn mác vật liệu phù hợp nhất cho
-                        công trình.</p>
+                    <p class="workflow__desc">Đội xe bồn và xe tải chuyên dụng đảm bảo cung cấp liên tục, đúng tiến độ
+                        cam kết.</p>
                 </div>
             </div>
         </div>
@@ -216,7 +228,7 @@
             </div>
             <div class="stats__item">
                 <h2 class="stats__number">1000+</h2>
-                <p class="stats__label">Đối tác - khách hàng tin cậy</p>
+                <p class="stats__label">Đối tác tin cậy</p>
             </div>
             <div class="stats__item">
                 <h2 class="stats__number">100%</h2>
@@ -224,25 +236,28 @@
             </div>
             <div class="stats__item">
                 <h2 class="stats__number">24/7</h2>
-                <p class="stats__label">Hỗ trợ kỹ thuật và tư vấn</p>
+                <p class="stats__label">Hỗ trợ kỹ thuật</p>
             </div>
         </div>
     </section>
 
     <section class="testimonials">
         <div class="container">
-            <div class="testimonials__header">
-                <h2 class="section-title section-header">ĐỐI TÁC NÓI GÌ VỀ CHÚNG TÔI</h2>
+            <div class="section-header">
+                <h2 class="section-title section-title--default">ĐỐI TÁC NÓI GÌ VỀ CHÚNG TÔI</h2>
                 <div class="testimonials__underline"></div>
+                <div class="section-line"></div>
             </div>
-
             <div class="testimonials__grid">
                 <div class="testimonial-card">
                     <div class="testimonial-card__stars">★★★★★</div>
                     <p class="testimonial-card__comment">“Chất lượng đá của Rạng Đông rất ổn định, giúp chúng tôi tiết
                         kiệm thời gian sàng lọc và đảm bảo mác bê tông cho dự án cầu đường.”</p>
                     <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar"></div>
+                        <div class="testimonial-card__avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="People01" class="testimonial-card__img1">
+                        </div>
                         <div class="testimonial-card__meta">
                             <strong class="testimonial-card__name">Giám đốc dự án</strong>
                             <p class="testimonial-card__company">Tập đoàn Xây dựng Nam Việt</p>
@@ -252,26 +267,32 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-card__stars">★★★★★</div>
-                    <p class="testimonial-card__comment">"Khả năng cung ứng của trạm trộn Rạng Đông thật ấn tượng. Ngay
-                        cả khi đổ bê tông khối lớn liên tục 36 giờ, chất lượng vẫn đồng nhất tuyệt đối."</p>
+                    <p class="testimonial-card__comment">"Dịch vụ chuyên nghiệp, tư vấn tận tâm và giá cả cạnh tranh là
+                        điều khiến chúng tôi tin chọn Rạng Đông làm đối tác cung ứng dài hạn."</p>
                     <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar"></div>
+                        <div class="testimonial-card__avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="People01" class="testimonial-card__img2">
+                        </div>
                         <div class="testimonial-card__meta">
                             <strong class="testimonial-card__name">Trưởng phòng Vật tư</strong>
-                            <p class="testimonial-card__company">Tập đoàn Xây dựng Nam Việt</p>
+                            <p class="testimonial-card__company">Cienco 4</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-card__stars">★★★★★</div>
-                    <p class="testimonial-card__comment">"Khả năng cung ứng của trạm trộn Rạng Đông rất ổn định. Kể cả
-                        khi đổ bê tông khối lượng lớn liên tục, chất lượng vẫn đồng nhất tuyệt đối."</p>
+                    <p class="testimonial-card__comment">"Dịch vụ tư vấn kỹ thuật rất tận tâm. Các anh em kỹ thuật hỗ
+                        trợ chúng tôi kiểm tra độ sụt ngay tại công trường rất nhiệt tình."</p>
                     <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar"></div>
+                        <div class="testimonial-card__avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="People01" class="testimonial-card__img3">
+                        </div>
                         <div class="testimonial-card__meta">
                             <strong class="testimonial-card__name">Chủ đầu tư</strong>
-                            <p class="testimonial-card__company">Công trình thủy điện</p>
+                            <p class="testimonial-card__company">Khu nghỉ dưỡng Phan Thiết</p>
                         </div>
                     </div>
                 </div>
@@ -281,38 +302,57 @@
 
     <section id="projects" class="projects-showcase">
         <div class="container projects-showcase__container">
+
             <div class="projects-showcase__info">
-                <span class="tag">NIÊM TỰ HÀO NGHỀ NGHIỆP</span>
-                <h2 class="section-title">DẤU ẤN TRÊN MỌI <br> <span class="section-title--highlight">CÔNG TRÌNH</span>
+                <span class="section-subtitle">NIỀM TỰ HÀO NGHỀ NGHIỆP</span>
+                <h2 class="section-title">
+                    DẤU ẤN TRÊN MỌI <br>
+                    <span class="section-title--highlight">CÔNG TRÌNH</span>
                 </h2>
+
                 <div class="project-list">
-                    <div class="project-list__item">
-                        <h4 class="project-list__title">HẠ TẦNG GIAO THÔNG</h4>
-                        <p class="project-list__desc">Cung cấp hơn 500,000 m3 đá và bê tông cho đoạn qua Phan Thiết -
-                            Vĩnh Hảo.</p>
+                    <div class="project-card-simple">
+                        <h4 class="project-card-simple__title">HẠ TẦNG GIAO THÔNG</h4>
+                        <p class="project-card-simple__desc">
+                            Cung cấp hơn 500,000 m3 đá và bê tông cho đoạn qua Phan Thiết - Vĩnh Hảo.
+                        </p>
                     </div>
-                    <div class="project-list__item">
-                        <h4 class="project-list__title">CÔNG NGHIỆP NẶNG - THỦY ĐIỆN </h4>
-                        <p class="project-list__desc">Đối tác cung ứng vật liệu độc quyền cho hạ tầng kỹ thuật và các
-                            nhà máy.</p>
+
+                    <div class="project-card-simple">
+                        <h4 class="project-card-simple__title">CÔNG NGHIỆP NẶNG - THỦY ĐIỆN</h4>
+                        <p class="project-card-simple__desc">
+                            Đối tác cung ứng vật liệu độc quyền cho hạ tầng kỹ thuật và các nhà máy.
+                        </p>
                     </div>
-                    <div class="project-list__item">
-                        <h4 class="project-list__title">CÔNG TRÌNH DÂN DỤNG</h4>
-                        <p class="project-list__desc">Cung ứng các dòng bê tông mác cao, giá cả phù hợp với các công
-                            trình dân dụng.</p>
+
+                    <div class="project-card-simple">
+                        <h4 class="project-card-simple__title">CÔNG TRÌNH DÂN DỤNG</h4>
+                        <p class="project-card-simple__desc">
+                            Cung ứng các dòng bê tông mác cao, giá cả phù hợp với các công trình dân dụng.
+                        </p>
                     </div>
                 </div>
-                <a href="#" class="projects-showcase__link">XEM TẤT CẢ DỰ ÁN →</a>
+
+                <a href="#" class="btn-view-projects">
+                    <span class="btn-text">XEM TẤT CẢ DỰ ÁN</span>
+                    <span class="btn-icon"><i class="fas fa-chevron-right"></i></span>
+                </a>
             </div>
+
             <div class="projects-showcase__gallery">
-                <div class="projects-showcase__large"><img
-                        src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/12/5/1124197/1.JPG" alt="Road">
+                <div class="projects-showcase__large">
+                    <img src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/12/5/1124197/1.JPG"
+                        alt="Road Construction">
                 </div>
                 <div class="projects-showcase__small">
-                    <img src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?q=80&w=1046&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Pipes">
-                    <img src="https://images.unsplash.com/photo-1575971637203-d6255d9947a9?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Construction">
+                    <div class="projects-showcase__small-item">
+                        <img src="https://images.unsplash.com/photo-1575971637203-d6255d9947a9?q=80&w=1074&auto=format&fit=crop"
+                            alt="Pipes">
+                    </div>
+                    <div class="projects-showcase__small-item">
+                        <img src="https://plus.unsplash.com/premium_photo-1682142037005-ed60a8e1958d?q=80&w=1264&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Site">
+                    </div>
                 </div>
             </div>
         </div>
@@ -320,80 +360,142 @@
 
     <section id="news" class="news">
         <div class="container">
-            <div class="news__header">
-                <h2 class="section-title">TIN TỨC & <span class="section-title--highlight">SỰ KIỆN</span></h2>
-                <a href="#" class="news__view-all">XEM TẤT CẢ</a>
+            <div class="news__header-wrapper">
+                <div class="news__header-left">
+                    <h2 class="section-title">TIN TỨC & <span class="section-title--highlight">SỰ KIỆN</span></h2>
+                    <p class="news__desc">Cập nhật những chuyển động mới nhất của Chúng tôi và ngành vật liệu xây dựng.
+                    </p>
+                </div>
+                <a href="#" class="news__view-all">XEM TẤT CẢ <i class="fas fa-external-link-alt"></i></a>
             </div>
+
             <div class="news__grid">
                 <article class="news-card">
-                    <img src="https://media.istockphoto.com/id/2241999693/vi/anh/c%C3%B4ng-nghi%E1%BB%87p-khai-th%C3%A1c-m%E1%BB%8F-m%E1%BB%8F-kim-c%C6%B0%C6%A1ng-b%C4%83ng-t%E1%BA%A3i-tr%C3%AAn-nh%C3%A0-m%C3%A1y-nghi%E1%BB%81n-xe-t%E1%BA%A3i-ch%E1%BB%9F-kimberlite.jpg?s=2048x2048&w=is&k=20&c=1VkhAXwpyxnCaGtnBEsBwtpoZ8hA0l3Sfmop4i7Iruc="
-                        alt="News" class="news-card__img">
+                    <div class="news-card__media">
+                        <img src="https://media.istockphoto.com/id/2241999693/vi/anh/c%C3%B4ng-nghi%E1%BB%87p-khai-th%C3%A1c-m%E1%BB%8F-m%E1%BB%8F-kim-c%C6%B0%C6%A1ng-b%C4%83ng-t%E1%BA%A3i-tr%C3%AAn-nh%C3%A0-m%C3%A1y-nghi%E1%BB%81n-xe-t%E1%BA%A3i-ch%E1%BB%9F-kimberlite.jpg?s=2048x2048&w=is&k=20&c=1VkhAXwpyxnCaGtnBEsBwtpoZ8hA0l3Sfmop4i7Iruc="
+                            alt="News 1" class="news-card__img">
+                        <span class="news-date-badge">25 TH 12</span>
+                    </div>
                     <div class="news-card__body">
-                        <span class="news-card__date">25 TH 12</span>
-                        <h3 class="news-card__title">Nâng cấp hệ thống nghiền đá tự động</h3>
-                        <a href="#" class="news-card__link">ĐỌC TIẾP →</a>
+                        <h3 class="news-card__title">Nâng cấp hệ thống nghiền đá tự động tại Mỏ đá</h3>
+                        <p class="news-card__excerpt">Rạng Đông chính thức đưa vào vận hành dây chuyền nghiền sàng công
+                            nghệ mới, nâng công suất thêm 30%...</p>
+                        <a href="#" class="news-card__link">ĐỌC TIẾP <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+
                 <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="News" class="news-card__img">
+                    <div class="news-card__media">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="News 2" class="news-card__img">
+                        <span class="news-date-badge">15 TH 12</span>
+                    </div>
                     <div class="news-card__body">
-                        <span class="news-card__date">15 TH 12</span>
-                        <h3 class="news-card__title">Rạng Đông đạt danh hiệu Top 10 Thương hiệu VLXD tiêu biểu năm...
-                        </h3>
-                        <a href="#" class="news-card__link">ĐỌC TIẾP →</a>
+                        <h3 class="news-card__title">Rạng Đông đạt danh hiệu Top 10 Thương hiệu VLXD tiêu biểu</h3>
+                        <p class="news-card__excerpt">Giải thưởng ghi nhận những đóng góp bền bỉ của công ty trong việc
+                            cung ứng vật liệu chất lượng cao cho thị trường...</p>
+                        <a href="#" class="news-card__link">ĐỌC TIẾP <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+
                 <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1724648179736-fef1ae010d6b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="News" class="news-card__img">
+                    <div class="news-card__media">
+                        <img src="https://images.unsplash.com/photo-1724648179736-fef1ae010d6b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="News 3" class="news-card__img">
+                        <span class="news-date-badge">10 TH 12</span>
+                    </div>
                     <div class="news-card__body">
-                        <span class="news-card__date">10 TH 12</span>
                         <h3 class="news-card__title">Hội thảo giải pháp bê tông nhựa chặt cho công trình giao thông</h3>
-                        <a href="#" class="news-card__link">ĐỌC TIẾP →</a>
+                        <p class="news-card__excerpt">Các chuyên gia đầu ngành cùng Rạng Đông thảo luận về giải pháp vật
+                            liệu tối ưu cho công trình giao thông...</p>
+                        <a href="#" class="news-card__link">ĐỌC TIẾP <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <div class="container contact__container">
+
             <div class="contact__info">
                 <h2 class="section-title">KẾT NỐI VỚI <span class="section-title--highlight">CHÚNG TÔI</span></h2>
                 <p class="contact__desc">Chúng tôi luôn sẵn sàng lắng nghe và cung cấp những giải pháp vật liệu tối ưu
-                    nhất.</p>
+                    nhất cho công trình của bạn.</p>
 
-                <div class="info-group">
-                    <div class="info-group__item">
-                        <strong class="info-group__label">Hotline kinh doanh:</strong>
-                        <p class="info-group__value">091.7630.863</p>
+                <div class="contact__list">
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact__details">
+                            <span class="contact__label">Hotline kinh doanh</span>
+                            <strong class="contact__value">091.7630.863</strong>
+                        </div>
                     </div>
-                    <div class="info-group__item">
-                        <strong class="info-group__label">Email tư vấn:</strong>
-                        <p class="info-group__value">chautm@rangdonggroup.vn</p>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact__details">
+                            <span class="contact__label">Email tư vấn</span>
+                            <strong class="contact__value">chautm@rangdonggroup.vn</strong>
+                        </div>
                     </div>
-                    <div class="info-group__item">
-                        <strong class="info-group__label">Trụ sở chính:</strong>
-                        <p class="info-group__value">Km09 QL28B - xã Lương Sơn - tỉnh Lâm Đồng</p>
+
+                    <div class="contact__item">
+                        <div class="contact__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact__details">
+                            <span class="contact__label">Trụ sở chính</span>
+                            <strong class="contact__value">Km09 QL28B - xã Lương Sơn - tỉnh Lâm Đồng</strong>
+                        </div>
                     </div>
                 </div>
-                <div class="btn btn--map">XEM BẢN ĐỒ TRÊN GOOGLE MAP</div>
+
+                <div class="contact__map-area">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18729.250193309705!2d108.3445424!3d11.263886950000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3176b914d0ff59ff%3A0x78d91f4b843fe477!2zQ8OUTkcgVFkgS0hPw4FORyBT4bqiTiBS4bqgTkcgxJDDlE5HLiAoTeG7jyDEkcOhIE7DumkgRMOieSk!5e1!3m2!1svi!2s!4v1767670475298!5m2!1svi!2s"
+                        width="576" height="320" style="border:0; border-radius: 12px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
 
-            <div class="contact__form-wrapper">
+            <div class="contact__form-box">
                 <h3 class="contact__form-title">Gửi yêu cầu báo giá</h3>
                 <form class="contact-form">
-                    <div class="contact-form__row">
-                        <input type="text" class="contact-form__input" placeholder="Họ và tên*">
-                        <input type="text" class="contact-form__input" placeholder="Số điện thoại*">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">HỌ VÀ TÊN*</label>
+                            <input type="text" class="form-input" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">SỐ ĐIỆN THOẠI*</label>
+                            <input type="text" class="form-input" placeholder="090 123 4567">
+                        </div>
                     </div>
-                    <select class="contact-form__select">
-                        <option>Dịch vụ quan tâm</option>
-                        <option>Bê tông thương phẩm</option>
-                    </select>
-                    <textarea class="contact-form__textarea"
-                        placeholder="Lời nhắn (Địa điểm công trình, khối lượng...)"></textarea>
+
+                    <div class="form-group">
+                        <label class="form-label">DỊCH VỤ QUAN TÂM</label>
+                        <select class="form-input" required>
+                            <option value="" disabled selected>Chọn dịch vụ...</option>
+
+                            <option value="be-tong">Bê tông thương phẩm</option>
+                            <option value="da-xay-dung">Đá xây dựng các loại</option>
+                            <option value="gach-khong-nung">Gạch không nung</option>
+                            <option value="khac">Khác</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group--textarea">
+                        <label class="form-label">LỜI NHẮN (ĐỊA ĐIỂM CÔNG TRÌNH, KHỐI LƯỢNG...)</label>
+                        <textarea class="form-input form-textarea"
+                            placeholder="Tôi cần báo giá 500m3 bê tông M300 tại..."></textarea>
+                    </div>
+
                     <button type="submit" class="btn btn--submit">GỬI YÊU CẦU NGAY</button>
                 </form>
             </div>
@@ -403,23 +505,32 @@
     <footer class="footer">
         <div class="container footer__grid">
             <div class="footer__about">
-                <img src="logo-footer.png" alt="Logo" class="footer__logo">
+                <a href="#" class="footer__logo">
+                    <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/LOGO%20RDG%20Final%20new.png?raw=true"
+                        alt="Logo Rạng Đông" class="logo-img">
+
+                    <div class="logo-text">
+                        <span class="logo-text__top">KHOÁNG SẢN</span>
+                        <span class="logo-text__bottom">RẠNG ĐÔNG</span>
+                    </div>
+                </a>
                 <p class="footer__text">Kiến tạo giá trị bền vững từ những nguồn lực tinh túy của đất mẹ. Rạng Đông
                     Group đồng hành cùng thịnh vượng Việt Nam.</p>
                 <div class="social-links">
                     <a href="#" class="social-links__item"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-links__item"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-links__item"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
             <div class="footer__nav">
                 <h4 class="footer__title">DANH MỤC</h4>
                 <ul class="footer__list">
-                    <li><a href="#" class="footer__link">Lịch sử hình thành</a></li>
-                    <li><a href="#" class="footer__link">Sản phẩm chủ lực</a></li>
-                    <li><a href="#" class="footer__link">Dự án tiêu biểu</a></li>
-                    <li><a href="#" class="footer__link">Tin tức & Sự kiện</a></li>
-                    <li><a href="#" class="footer__link">Tuyển dụng</a></li>
+                    <li><a href="#" class="footer__link"> Lịch sử hình thành</a></li>
+                    <li><a href="#" class="footer__link"> Sản phẩm chủ lực</a></li>
+                    <li><a href="#" class="footer__link"> Dự án tiêu biểu</a></li>
+                    <li><a href="#" class="footer__link"> Tin tức & Sự kiện</a></li>
+                    <li><a href="#" class="footer__link"> Tuyển dụng</a></li>
                 </ul>
             </div>
 
@@ -427,12 +538,13 @@
                 <h4 class="footer__title">THÔNG TIN</h4>
                 <p class="footer__contact-item"><i class="fas fa-phone"></i> Hotline: 091.7630.863</p>
                 <p class="footer__contact-item"><i class="fas fa-envelope"></i> chautm@rangdonggroup.vn</p>
-                <p class="footer__contact-item"><i class="fas fa-clock"></i> T2 - CN: 07:00 - 17:00</p>
+                <p class="footer__contact-item"><i class="fas fa-clock"></i> T2 - CN: 07:00 - 17:00 (Vận chuyển 24/7)
+                </p>
             </div>
 
             <div class="footer__newsletter">
                 <h4 class="footer__title">NHẬN BÁO GIÁ</h4>
-                <p class="footer__text">Đăng ký nhận bảng giá vật liệu hàng tháng.</p>
+                <p class="footer__text">Đăng ký nhận bảng giá mới nhất.</p>
                 <div class="newsletter-form">
                     <input type="email" class="newsletter-form__input" placeholder="Email của bạn...">
                     <button class="newsletter-form__btn"><i class="fas fa-paper-plane"></i></button>
@@ -443,9 +555,9 @@
         <div class="footer__bottom">
             <p class="footer__copyright">Copyright © 2026 Khoáng Sản Rạng Đông. Powered by RD Marketing.</p>
         </div>
-
-        <div class="back-to-top"><i class="fas fa-chevron-up"></i></div>
     </footer>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
