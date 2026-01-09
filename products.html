@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sản Phẩm - Khoáng Sản Rạng Đông</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/products-style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar--solid">
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/LOGO%20RDG%20Final%20new.png?raw=true"
+                    class="logo-img" alt="Logo">
+                <div class="logo-text">
+                    <span class="logo-text__top">KHOÁNG SẢN</span>
+                    <span class="logo-text__bottom">RẠNG ĐÔNG</span>
+                </div>
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="navbar__links">
+                <li><a href="index.html" class="navbar__link">TRANG CHỦ</a></li>
+                <li><a href="index.html#about" class="navbar__link">GIỚI THIỆU</a></li>
+                <li><a href="products.html" class="navbar__link navbar__link--active">SẢN PHẨM</a></li>
+                <li><a href="index.html#projects" class="navbar__link">DỰ ÁN</a></li>
+                <li><a href="index.html#news" class="navbar__link">TIN TỨC</a></li>
+                <li><a href="index.html#contact" class="navbar__link">LIÊN HỆ</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--quote">BÁO GIÁ NGAY</a>
+        </div>
+    </nav>
+    <div class="breadcrumb-section">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><span>Sản phẩm</span></li>
+            </ul>
+        </div>
+    </div>
+    <section class="page-header section-padding">
+        <div class="container text-center">
+            <h1 class="heading-xl">DANH MỤC <span class="highlight">SẢN PHẨM</span></h1>
+            <p class="section-desc-text">Cung cấp giải pháp vật liệu xây dựng toàn diện, chất lượng cao cho mọi công
+                trình.</p>
+            <div class="section-line"></div>
+        </div>
+    </section>
+
+    <section class="products-page-list section-padding bg-gray">
+        <div class="container">
+            <div class="products-grid" id="all-products-container">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__about">
+                <a href="#" class="footer__logo">
+                    <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/LOGO%20RDG%20Final%20new.png?raw=true"
+                        class="logo-img">
+                    <div class="logo-text"><span class="logo-text__top">KHOÁNG SẢN</span><span
+                            class="logo-text__bottom">RẠNG ĐÔNG</span></div>
+                </a>
+                <p class="footer__text">Kiến tạo giá trị bền vững từ những nguồn lực tinh túy của đất mẹ.</p>
+                <div class="social-links"></div>
+            </div>
+            <div class="footer__nav">
+                <h4 class="footer__title">DANH MỤC</h4>
+                <ul class="footer__list"></ul>
+            </div>
+            <div class="footer__contact">
+                <h4 class="footer__title">THÔNG TIN</h4>
+                <div class="footer__contact-item"><i class="fas fa-map-marker-alt"></i> <span>...</span></div>
+                <div class="footer__contact-item"><i class="fas fa-phone-alt"></i> <span>...</span></div>
+                <div class="footer__contact-item"><i class="fas fa-clock"></i> <span>...</span></div>
+            </div>
+            <div class="footer__newsletter">
+                <h4 class="footer__title">NHẬN BÁO GIÁ</h4>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-form__input" placeholder="Email...">
+                    <button class="newsletter-form__btn"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">Copyright © 2026 Khoáng Sản Rạng Đông.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/common/company-db.js"></script>
+
+    <script src="./assets/js/products/products-detail-db.js"></script>
+
+    <script src="./assets/js/products/products-page-script.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

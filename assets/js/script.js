@@ -182,7 +182,7 @@ function renderProductCards() {
                         <h3 class="product-card__title">${product.name}</h3>
                         <p class="product-card__desc">${descText}</p>
                         ${specsHTML}
-                        <a href="product-detail.html?id=${product.id}" class="product-card__link">XEM CHI TIẾT</a>
+                        <a href="products-detail.html?id=${product.id}" class="product-card__link">XEM CHI TIẾT</a>
                     </div>
                 </article>
             </div>`;
@@ -215,7 +215,7 @@ function renderTestimonials() {
                             <img src="${item.avatar}" alt="${item.name}" class="testimonial-card__img obj-pos-top">
                         </div>
                         <div class="testimonial-card__meta">
-                            <strong class="testimonial-card__name">${item.name}</strong>
+                            <strong class="testimonial-card__name">${item.role}</strong>
                             <p class="testimonial-card__company">${item.company}</p>
                         </div>
                     </div>
