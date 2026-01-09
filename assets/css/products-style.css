@@ -1,0 +1,407 @@
+/* ==========================================================================
+   PRODUCTS-STYLE.CSS
+   Dành riêng cho trang chi tiết sản phẩm và các trang con liên quan
+   Yêu cầu: Phải nhúng file style.css (chứa biến màu, reset) trước file này.
+   ========================================================================== */
+
+/* -----------------------------------------------------------
+   1. PAGE BANNER (HERO TRANG CON)
+   ----------------------------------------------------------- */
+.page-banner {
+  height: 300px;
+  position: relative;
+  /* Ảnh nền mặc định cho banner trang con */
+  background-image: url("https://media.istockphoto.com/id/1346029988/vi/anh/c%C3%B4ng-tr%C6%B0%E1%BB%9Dng-x%C3%A2y-d%E1%BB%B1ng-v%C3%A0-c%E1%BA%A7n-c%E1%BA%A9u-trong-th%C3%A0nh-ph%E1%BB%91-l%C3%BAc-ho%C3%A0ng-h%C3%B4n.jpg?s=2048x2048&w=is&k=20&c=XN2X7Y_g_4KyK_9HK_5_5uVyl7QyKqF7R4zC8XyY8Xg=");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  /* Bù trừ cho navbar sticky (nếu navbar cao ~80px) */
+  margin-top: 80px;
+}
+
+.page-banner__overlay {
+  position: absolute;
+  inset: 0;
+  /* Phủ màu xanh chủ đạo lên ảnh nền để làm nổi chữ */
+  background: rgba(15, 79, 140, 0.85);
+  z-index: 1;
+}
+
+.page-banner__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Các class tiện ích nhỏ cho banner */
+.text-white {
+  color: #fff !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mb-3 {
+  margin-bottom: 16px !important;
+}
+
+/* --- Breadcrumb (Thanh điều hướng nhỏ) --- */
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  list-style: none;
+}
+
+.breadcrumb li a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb li a:hover {
+  color: var(--secondary-color); /* Màu vàng */
+}
+
+.breadcrumb .separator {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+}
+
+.breadcrumb .current {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------------------------------
+   2. PRODUCT MAIN INFO (LAYOUT CHÍNH)
+   ----------------------------------------------------------- */
+.product-detail__container {
+  display: grid;
+  /* Chia 2 cột: Ảnh (1 phần) - Thông tin (1 phần) */
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* --- Cột Trái: Gallery Ảnh --- */
+.p-gallery__main {
+  width: 100%;
+  height: 400px; /* Chiều cao cố định cho ảnh lớn */
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+}
+
+.p-gallery__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Hiệu ứng zoom nhẹ khi hover ảnh lớn */
+.p-gallery__main:hover img {
+  transform: scale(1.05);
+}
+
+.p-gallery__thumbs {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Cho phép trượt ngang nếu nhiều ảnh */
+}
+
+.p-gallery__thumb {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.p-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Trạng thái ảnh nhỏ đang được chọn */
+.p-gallery__thumb.active,
+.p-gallery__thumb:hover {
+  border-color: var(--primary-color);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* --- Cột Phải: Thông tin sản phẩm --- */
+.product-title {
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.product-price-box {
+  margin: 24px 0;
+  padding: 16px 24px;
+  background: var(--bg-light); /* Nền xanh nhạt */
+  border-radius: 8px;
+  display: inline-block;
+  border-left: 4px solid var(--secondary-color); /* Vạch vàng điểm nhấn */
+}
+
+.price-label {
+  font-size: 1.4rem;
+  color: var(--text-body);
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.price-value {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.product-desc-short {
+  font-size: 1.6rem;
+  color: var(--text-body);
+  margin-bottom: 32px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.product-specs-list {
+  margin-bottom: 40px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+.spec-item i {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+/* Nút bấm hành động */
+.product-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn--lg {
+  padding: 14px 32px;
+  font-size: 1.6rem;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn--outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* -----------------------------------------------------------
+   3. TABS NỘI DUNG CHI TIẾT
+   ----------------------------------------------------------- */
+.product-tabs {
+  margin-top: 40px;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: -1px; /* Đè lên border-bottom của header */
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: transparent;
+}
+
+.tab-content-wrapper {
+  padding: 48px;
+  min-height: 300px;
+  background: #fff; /* Đảm bảo nền trắng trên nền xám của section */
+}
+
+/* Hiệu ứng Fade khi chuyển tab */
+.tab-content {
+  display: none; /* Mặc định ẩn */
+  animation: fadeEffect 0.6s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Danh sách chi tiết trong tab */
+.detail-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.detail-list li {
+  margin-bottom: 12px;
+  color: var(--text-body);
+  font-size: 1.5rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.detail-list li::before {
+  content: "•";
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* Bảng thông số kỹ thuật */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.specs-table th {
+  color: var(--primary-color);
+  width: 30%;
+  font-weight: 700;
+  background-color: var(--bg-light);
+}
+
+.specs-table td {
+  color: var(--text-body);
+}
+
+.specs-table tr:last-child td,
+.specs-table tr:last-child th {
+  border-bottom: none;
+}
+
+/* -----------------------------------------------------------
+   4. RESPONSIVE CHO TRANG CHI TIẾT
+   ----------------------------------------------------------- */
+
+/* --- Tablet & Mobile (Dưới 1024px) --- */
+@media (max-width: 1024px) {
+  .page-banner {
+    height: 240px;
+    margin-top: 60px; /* Điều chỉnh theo navbar mobile */
+  }
+
+  .product-detail__container {
+    grid-template-columns: 1fr; /* Chuyển về 1 cột dọc */
+    gap: 40px;
+  }
+
+  .p-gallery__main {
+    height: auto;
+    aspect-ratio: 4/3; /* Giữ tỉ lệ khung hình đẹp */
+  }
+}
+
+/* --- Mobile (Dưới 768px) --- */
+@media (max-width: 768px) {
+  .page-banner {
+    height: 200px;
+    margin-top: 0; /* Reset nếu header mobile không sticky hoặc khác kiểu */
+    padding-top: 60px; /* Bù khoảng trống cho navbar fixed */
+  }
+
+  .product-title {
+    font-size: 2.4rem; /* Giảm cỡ chữ tiêu đề */
+  }
+
+  .product-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn--lg {
+    width: 100%;
+  }
+
+  /* Tabs chuyển sang dạng dọc hoặc cuộn ngang */
+  .tab-header {
+    flex-direction: column;
+    gap: 0;
+    border-bottom: none;
+  }
+
+  .tab-btn {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    padding: 16px;
+  }
+
+  .tab-btn.active {
+    border-bottom: 1px solid var(--primary-color);
+    background-color: var(--bg-light);
+  }
+
+  .tab-content-wrapper {
+    padding: 24px 16px;
+  }
+}

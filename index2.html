@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <!-- embed css -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- embed swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -46,7 +49,7 @@
                 <ul class="navbar__links">
                     <li><a href="#" class="navbar__link navbar__link--active">TRANG CHỦ</a></li>
                     <li><a href="#about" class="navbar__link">GIỚI THIỆU</a></li>
-                    <li><a href="#products" class="navbar__link">SẢN PHẨM</a></li>
+                    <li><a href="./product-detail.html" class="navbar__link">SẢN PHẨM</a></li>
                     <li><a href="#projects" class="navbar__link">DỰ ÁN</a></li>
                     <li><a href="#news" class="navbar__link">TIN TỨC</a></li>
                     <li><a href="#contact" class="navbar__link">LIÊN HỆ</a></li>
@@ -72,8 +75,25 @@
     <section id="about" class="about section-padding">
         <div class="container about__container">
             <div class="about__media">
-                <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/DJI_0057.JPG?raw=true"
-                    alt="Toàn cảnh Khuôn viên" class="about__img">
+                <div class="about__media">
+                    <div class="about-slider-wrapper">
+                        <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/DJI_0057.JPG?raw=true"
+                            alt="Về chúng tôi 1" class="about-slide-item active">
+
+                        <img src="https://plus.unsplash.com/premium_photo-1672423154405-5fd922c11af2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Về chúng tôi 2" class="about-slide-item">
+
+                        <img src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=1000&auto=format&fit=crop"
+                            alt="Về chúng tôi 3" class="about-slide-item">
+                    </div>
+
+                    <div class="about__quote-box">
+                        <span class="about__quote-icon">“</span>
+                        <p class="about__quote-text">"Chúng tôi không chỉ bán vật liệu, chúng tôi xây dựng sự an tâm cho
+                            khách hàng."</p>
+                        <p class="about__quote-author">— TỔNG GIÁM ĐỐC</p>
+                    </div>
+                </div>
                 <div class="about__quote-box">
                     <span class="about__quote-icon">“</span>
                     <p class="about__quote-text">"Chúng tôi không chỉ bán vật liệu, chúng tôi xây dựng sự an tâm cho
@@ -124,60 +144,141 @@
                     thuật phức tạp từ các dự án trọng điểm quốc gia.</p>
             </div>
 
-            <div class="products__grid">
-                <article class="product-card card-base">
-                    <div class="product-card__media">
-                        <img src="https://media.istockphoto.com/id/1040410620/vi/anh/%C4%91%E1%BB%95-b%C3%AA-t%C3%B4ng-l%C3%AAn-n%E1%BB%81n-m%C3%B3ng-t%C3%B2a-nh%C3%A0.jpg?s=2048x2048&w=is&k=20&c=lWOqcEL_BrrIhjL3H9SJHUTSuuSxDLDMS09QeVhRHDs="
-                            alt="Bê tông" class="product-card__img">
-                        <span class="badge badge--orange">BÁN CHẠY NHẤT</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">BÊ TÔNG THƯƠNG PHẨM</h3>
-                        <p class="product-card__desc">Đầy đủ các mác từ M100 đến M600. Đặc biệt là dòng bê tông tự lèn
-                            và bê tông bền sunfat cho các công trình ven biển.</p>
-                        <ul class="product-card__specs">
-                            <li>Độ sụt ổn định, kiểm soát nhiệt tốt</li>
-                            <li>Hệ thống trạm trộn công suất lớn</li>
-                        </ul>
-                        <a href="#" class="product-card__link">XEM CHI TIẾT</a>
-                    </div>
-                </article>
+            <div class="swiper product-swiper">
+                <div class="swiper-wrapper">
 
-                <article class="product-card card-base">
-                    <div class="product-card__media">
-                        <img src="https://plus.unsplash.com/premium_photo-1675543163354-e4dc1f541330?q=80&w=1074&auto=format&fit=crop"
-                            alt="Đá xây dựng" class="product-card__img">
-                        <span class="badge badge--blue">KHAI THÁC TRỰC TIẾP</span>
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">ĐÁ XÂY DỰNG CÁC LOẠI</h3>
-                        <p class="product-card__desc">Cung ứng đá 1x2, 2x4, 4x6 và đá các loại sản phẩm khác. Sản phẩm
-                            sạch, ít tạp chất, độ bền nén cao đạt chuẩn ISO.</p>
-                        <ul class="product-card__specs">
-                            <li>Độ sụt ổn định</li>
-                            <li>Trữ lượng khai thác lớn</li>
-                        </ul>
-                        <a href="#" class="product-card__link">XEM CHI TIẾT</a>
-                    </div>
-                </article>
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://media.istockphoto.com/id/1040410620/vi/anh/%C4%91%E1%BB%95-b%C3%AA-t%C3%B4ng-l%C3%AAn-n%E1%BB%81n-m%C3%B3ng-t%C3%B2a-nh%C3%A0.jpg?s=2048x2048&w=is&k=20&c=lWOqcEL_BrrIhjL3H9SJHUTSuuSxDLDMS09QeVhRHDs="
+                                    alt="Bê tông" class="product-card__img">
 
-                <article class="product-card card-base">
-                    <div class="product-card__media">
-                        <img src="https://plus.unsplash.com/premium_photo-1682724033013-3abefffb41ad?q=80&w=1471&auto=format&fit=crop"
-                            alt="Gạch không nung" class="product-card__img">
-                        <span class="badge badge--green">SẢN PHẨM XANH</span>
+                                <span class="badge badge--orange">BÁN CHẠY NHẤT</span>
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">BÊ TÔNG THƯƠNG PHẨM</h3>
+                                <p class="product-card__desc">Đầy đủ các mác từ M100 đến M600, được trộn bằng máy
+                                    móc tự động
+                                    tại trạm trộn theo tỷ lệ chính xác, mang lại chất lượng đồng đều, tiết kiệm thời
+                                    gian, nhân công. </p>
+                                <ul class="product-card__specs">
+                                    <li>Độ sụt ổn định</li>
+                                    <li>Trạm trộn công suất lớn</li>
+                                </ul>
+                                <a href="product-detail.html?id=be-tong-thuong-pham" class="product-card__link">XEM CHI
+                                    TIẾT</a>
+                            </div>
+                        </article>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">GẠCH KHÔNG NUNG</h3>
-                        <p class="product-card__desc">Gạch Block, gạch vỉa hè Terrazzo với đa dạng mẫu mã và màu sắc. Độ
-                            bền cao, cách âm, cách nhiệt vượt trội.</p>
-                        <ul class="product-card__specs">
-                            <li>Thân thiện môi trường</li>
-                            <li>Đáp ứng mọi kích thước đặt hàng</li>
-                        </ul>
-                        <a href="#" class="product-card__link">XEM CHI TIẾT</a>
+
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://files.bienphong.com.vn//bbpmedia/media/1200/2023/7/19/19132228pmimage003.jpg"
+                                    alt="Đá xây dựng" class="product-card__img">
+                                <span class="badge badge--blue">KHAI THÁC TRỰC TIẾP</span>
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">ĐÁ XÂY DỰNG</h3>
+                                <p class="product-card__desc">Cung ứng đá 1x2, 2x4, 4x6 và đá các loại sản phẩm khác.
+                                    Sản phẩm sạch, ít tạp chất, độ bền nén cao đạt chuẩn ISO.</p>
+                                <ul class="product-card__specs">
+                                    <li>Độ nén cao</li>
+                                    <li>Trữ lượng lớn</li>
+                                </ul>
+                                <a href="product-detail.html?id=da-xay-dung" class="product-card__link">XEM CHI TIẾT</a>
+                            </div>
+                        </article>
                     </div>
-                </article>
+
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://vro.vn/wp-content/uploads/2025/05/gach-khong-nung-block.jpg"
+                                    alt="Gạch không nung" class="product-card__img obj-pos-right">
+                                <span class="badge badge--green">SẢN PHẨM XANH</span>
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">GẠCH KHÔNG NUNG</h3>
+                                <p class="product-card__desc">Gạch Block, gạch vỉa hè Terrazzo với đa dạng mẫu mã và màu
+                                    sắc. Độ bền cao, cách âm, cách nhiệt vượt trội.</p>
+                                <ul class="product-card__specs">
+                                    <li>Thân thiện môi trường</li>
+                                    <li>Đa dạng kích thước</li>
+                                </ul>
+                                <a href="product-detail.html?id=gach-khong-nung" class="product-card__link">XEM CHI
+                                    TIẾT</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://media.vov.vn/sites/default/files/styles/large/public/2024-04/can-cat-nhan-tao-o-dau-01.jpg"
+                                    alt="Cát xây dựng" class="product-card__img obj-pos-bottom">
+                                <span class="badge badge--green">SẢN PHẨM XANH</span>
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">CÁT XÂY DỰNG</h3>
+                                <p class="product-card__desc">Cát vàng đổ bê tông, cát xây tô sàng rửa sạch, module hạt
+                                    đều, khả năng lấp đầy, giúp tăng cường độ bê tông, giảm nước, tiết kiệm xi măng</p>
+                                <ul class="product-card__specs">
+                                    <li>Không lẫn tạp chất</li>
+                                    <li>Nguồn gốc rõ ràng</li>
+                                </ul>
+                                <a href="product-detail.html?id=cat-xay-dung" class="product-card__link">XEM CHI
+                                    TIẾT</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://thietbimaianh.com.vn/uploads/tiny_uploads/_DSC0316.jpg"
+                                    alt="Bê tông nhựa" class="product-card__img">
+                                <span class="badge badge--blue">CÔNG NGHỆ CAO</span>
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">BÊ TÔNG NHỰA NÓNG</h3>
+                                <p class="product-card__desc">Bê tông nhựa chặt (Asphalt) rải nóng cho các công trình
+                                    giao thông. Đa dạng cấp phối phù hợp với nhu cầu thi công thực tế.</p>
+                                <ul class="product-card__specs">
+                                    <li>Chịu tải trọng lớn</li>
+                                    <li>Mặt đường êm thuận</li>
+                                </ul>
+                                <a href="product-detail.html?id=be-tong-nhua-nong" class="product-card__link">XEM CHI
+                                    TIẾT</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <article class="product-card card-base">
+                            <div class="product-card__media">
+                                <img src="https://www.sivali.vn/images/c%E1%BB%91ng_b%C3%AA_t%C3%B4ng_t%E1%BA%A1i_qu%E1%BA%A3ng_ninh.jpg"
+                                    alt="Cống" class="product-card__img">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">CẤU KIỆN ĐÚC SẴN</h3>
+                                <p class="product-card__desc">Cống tròn, cống hộp, dải phân cách bê tông cốt thép đúc
+                                    sẵn, các loại cấu kiện khác... nhận đặt hàng theo yêu cầu.</p>
+                                <ul class="product-card__specs">
+                                    <li>Bê tông mác cao</li>
+                                    <li>Ván khuôn định hình thép</li>
+                                </ul>
+                                <a href="product-detail.html?id=cau-kien-duc-san" class="product-card__link">XEM CHI
+                                    TIẾT</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <div class="swiper-button-next swiper-nav-btn-circle"><i class="fas fa-chevron-right"></i></div>
+                <div class="swiper-button-prev swiper-nav-btn-circle"><i class="fas fa-chevron-left"></i></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -187,7 +288,7 @@
             <div class="workflow__header">
                 <div class="workflow__header-left">
                     <h4 class="text-subtitle">CHUYÊN NGHIỆP VÀ TẬN TÂM</h4>
-                    <h2 class="heading-xl section-title--default">QUY TRÌNH LÀM VIỆC</h2>
+                    <h2 class="heading-xl heading--default">QUY TRÌNH LÀM VIỆC</h2>
                 </div>
                 <div class="workflow__header-right">
                     <p class="workflow__desc-text">Chúng tôi tối ưu hóa mọi công đoạn để đảm bảo chất lượng vật liệu tốt
@@ -226,19 +327,27 @@
     <section class="stats">
         <div class="container stats__container">
             <div class="stats__item">
-                <h2 class="stats__number">120+ Tỷ</h2>
+                <h2 class="stats__number">
+                    <span class="counter" data-target="120">0</span>+ Tỷ
+                </h2>
                 <p class="stats__label">Vốn đầu tư</p>
             </div>
             <div class="stats__item">
-                <h2 class="stats__number">1000+</h2>
+                <h2 class="stats__number">
+                    <span class="counter" data-target="1000">0</span>+
+                </h2>
                 <p class="stats__label">Đối tác tin cậy</p>
             </div>
             <div class="stats__item">
-                <h2 class="stats__number">100%</h2>
+                <h2 class="stats__number">
+                    <span class="counter" data-target="100">0</span>%
+                </h2>
                 <p class="stats__label">Vật liệu đạt chuẩn</p>
             </div>
             <div class="stats__item">
-                <h2 class="stats__number">24/7</h2>
+                <h2 class="stats__number">
+                    <span class="counter" data-target="24">0</span>/7
+                </h2>
                 <p class="stats__label">Hỗ trợ kỹ thuật</p>
             </div>
         </div>
@@ -250,54 +359,103 @@
                 <h2 class="heading-xl heading--default">ĐỐI TÁC NÓI GÌ VỀ CHÚNG TÔI</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="testimonials__grid">
-                <div class="testimonial-card card-base">
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p class="testimonial-card__comment">“Chất lượng đá của Rạng Đông rất ổn định, giúp chúng tôi tiết
-                        kiệm thời gian sàng lọc và đảm bảo mác bê tông cho dự án cầu đường.”</p>
-                    <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=687&auto=format&fit=crop"
-                                alt="People01" class="testimonial-card__img">
-                        </div>
-                        <div class="testimonial-card__meta">
-                            <strong class="testimonial-card__name">Giám đốc dự án</strong>
-                            <p class="testimonial-card__company">Tập đoàn Xây dựng Nam Việt</p>
+
+            <div class="swiper testimonial-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-base">
+                            <div class="testimonial-card__stars">★★★★★</div>
+                            <p class="testimonial-card__comment">“Chất lượng đá của Rạng Đông rất ổn định, giúp chúng
+                                tôi tiết kiệm thời gian sàng lọc và đảm bảo mác bê tông cho dự án cầu đường.”</p>
+                            <div class="testimonial-card__user">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=687&auto=format&fit=crop"
+                                        alt="User" class="testimonial-card__img obj-pos-top">
+                                </div>
+                                <div class="testimonial-card__meta">
+                                    <strong class="testimonial-card__name">Giám đốc dự án</strong>
+                                    <p class="testimonial-card__company">Tập đoàn Nam Việt</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-base">
+                            <div class="testimonial-card__stars">★★★★★</div>
+                            <p class="testimonial-card__comment">"Dịch vụ chuyên nghiệp, tư vấn tận tâm và giá cả cạnh
+                                tranh là điều khiến chúng tôi tin chọn Rạng Đông làm đối tác cung ứng dài hạn."</p>
+                            <div class="testimonial-card__user">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop"
+                                        alt="User" class="testimonial-card__img obj-pos-top">
+                                </div>
+                                <div class="testimonial-card__meta">
+                                    <strong class="testimonial-card__name">Trưởng phòng Vật tư</strong>
+                                    <p class="testimonial-card__company">Cienco 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-base">
+                            <div class="testimonial-card__stars">★★★★★</div>
+                            <p class="testimonial-card__comment">"Dịch vụ tư vấn kỹ thuật rất tận tâm. Các anh em kỹ
+                                thuật hỗ trợ chúng tôi kiểm tra độ sụt ngay tại công trường rất nhiệt tình."</p>
+                            <div class="testimonial-card__user">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.unsplash.com/photo-1612536295020-34428662e57d?q=80&w=687&auto=format&fit=crop"
+                                        alt="User" class="testimonial-card__img obj-pos-top">
+                                </div>
+                                <div class="testimonial-card__meta">
+                                    <strong class="testimonial-card__name">Chủ đầu tư</strong>
+                                    <p class="testimonial-card__company">Khu nghỉ dưỡng Phan Thiết</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-base">
+                            <div class="testimonial-card__stars">★★★★★</div>
+                            <p class="testimonial-card__comment">"Tiến độ giao hàng cực kỳ ấn tượng. Dù công trình ở xa
+                                và đường khó đi nhưng xe bê tông luôn đến đúng giờ."</p>
+                            <div class="testimonial-card__user">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop"
+                                        alt="User" class="testimonial-card__img obj-pos-top">
+                                </div>
+                                <div class="testimonial-card__meta">
+                                    <strong class="testimonial-card__name">Kỹ sư trưởng</strong>
+                                    <p class="testimonial-card__company">Delta Group</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card card-base">
+                            <div class="testimonial-card__stars">★★★★★</div>
+                            <p class="testimonial-card__comment">"Sản phẩm gạch không nung rất đều, đẹp, ít bị vỡ góc
+                                cạnh khi vận chuyển. Rất hài lòng về chất lượng."</p>
+                            <div class="testimonial-card__user">
+                                <div class="testimonial-card__avatar">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
+                                        alt="User" class="testimonial-card__img obj-pos-top">
+                                </div>
+                                <div class="testimonial-card__meta">
+                                    <strong class="testimonial-card__name">Nhà thầu phụ</strong>
+                                    <p class="testimonial-card__company">Xây dựng Hòa Bình</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="testimonial-card card-base">
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p class="testimonial-card__comment">"Dịch vụ chuyên nghiệp, tư vấn tận tâm và giá cả cạnh tranh là
-                        điều khiến chúng tôi tin chọn Rạng Đông làm đối tác cung ứng dài hạn."</p>
-                    <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=687&auto=format&fit=crop"
-                                alt="People02" class="testimonial-card__img">
-                        </div>
-                        <div class="testimonial-card__meta">
-                            <strong class="testimonial-card__name">Trưởng phòng Vật tư</strong>
-                            <p class="testimonial-card__company">Cienco 4</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card card-base">
-                    <div class="testimonial-card__stars">★★★★★</div>
-                    <p class="testimonial-card__comment">"Dịch vụ tư vấn kỹ thuật rất tận tâm. Các anh em kỹ thuật hỗ
-                        trợ chúng tôi kiểm tra độ sụt ngay tại công trường rất nhiệt tình."</p>
-                    <div class="testimonial-card__user">
-                        <div class="testimonial-card__avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=687&auto=format&fit=crop"
-                                alt="People03" class="testimonial-card__img">
-                        </div>
-                        <div class="testimonial-card__meta">
-                            <strong class="testimonial-card__name">Chủ đầu tư</strong>
-                            <p class="testimonial-card__company">Khu nghỉ dưỡng Phan Thiết</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -540,6 +698,7 @@
         </div>
     </footer>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
