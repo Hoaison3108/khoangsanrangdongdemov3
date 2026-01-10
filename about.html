@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Sản Phẩm - Khoáng Sản Rạng Đông</title>
+    <title>Giới Thiệu - Khoáng Sản Rạng Đông</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,35 +16,10 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/component-style.css">
-    <link rel="stylesheet" href="./assets/css/products-style.css">
+    <link rel="stylesheet" href="./assets/css/about-style.css">
 </head>
 
 <body>
-
-    <!-- <nav class="navbar navbar--solid">
-        <div class="container navbar__container">
-            <a href="index.html" class="navbar__logo">
-                <img src="https://github.com/Hoaison3108/khoangsanrangdongdemov3/blob/main/assets/image/LOGO%20RDG%20Final%20new.png?raw=true"
-                    class="logo-img" alt="Logo">
-                <div class="logo-text">
-                    <span class="logo-text__top">KHOÁNG SẢN</span>
-                    <span class="logo-text__bottom">RẠNG ĐÔNG</span>
-                </div>
-            </a>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <ul class="navbar__links">
-                <li><a href="index.html" class="navbar__link">TRANG CHỦ</a></li>
-                <li><a href="index.html#about" class="navbar__link">GIỚI THIỆU</a></li>
-                <li><a href="products.html" class="navbar__link navbar__link--active">SẢN PHẨM</a></li>
-                <li><a href="index.html#projects" class="navbar__link">DỰ ÁN</a></li>
-                <li><a href="index.html#news" class="navbar__link">TIN TỨC</a></li>
-                <li><a href="index.html#contact" class="navbar__link">LIÊN HỆ</a></li>
-            </ul>
-            <a href="index.html#contact" class="btn btn--quote">BÁO GIÁ NGAY</a>
-        </div>
-    </nav> -->
 
     <app-navbar></app-navbar>
 
@@ -52,24 +27,52 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><span>Sản phẩm</span></li>
+                <li><span>Giới thiệu</span></li>
             </ul>
         </div>
     </div>
+
     <section class="page-header">
-        <div class="container text-center">
-            <h1 class="heading-xl">DANH MỤC <span class="highlight">SẢN PHẨM</span></h1>
-            <p class="section-desc-text">Cung cấp giải pháp vật liệu xây dựng toàn diện, chất lượng cao cho mọi công
-                trình.</p>
-            <div class="section-line"></div>
+        <div class="container text-center" id="about-header-content"></div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container" id="about-intro-container"></div>
+    </section>
+
+    <section class="section-padding bg-gray">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="heading-xl">GIÁ TRỊ <span class="highlight">CỐT LÕI</span></h2>
+            </div>
+            <div class="grid-4-col" id="core-values-grid"></div>
         </div>
     </section>
 
-    <section class="products-page-list section-padding">
+    <section class="section-padding">
         <div class="container">
-            <div class="products-grid" id="all-products-container">
-                <!-- products/products-detail-db.js -->
+            <div class="text-center mb-5">
+                <h2 class="heading-xl">LỊCH SỬ <span class="highlight">HÌNH THÀNH</span></h2>
             </div>
+            <div class="timeline" id="timeline-container"></div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-gray">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="heading-xl">BAN <span class="highlight">LÃNH ĐẠO</span></h2>
+            </div>
+            <div class="team-grid" id="team-grid"></div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="heading-xl">HÌNH ẢNH <span class="highlight">HOẠT ĐỘNG</span></h2>
+            </div>
+            <div id="gallery-grid"></div>
         </div>
     </section>
 
@@ -113,9 +116,9 @@
 
     <script src="./assets/js/common/company-db.js"></script>
 
-    <script src="./assets/js/products/products-detail-db.js"></script>
+    <script src="./assets/js/about/about-page-db.js"></script>
 
-    <script src="./assets/js/products/products-page-script.js"></script>
+    <script src="./assets/js/about/about-page-script.js"></script>
 
     <script src="./assets/js/script.js"></script>
 

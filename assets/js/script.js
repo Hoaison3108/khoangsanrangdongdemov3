@@ -1,46 +1,25 @@
 /**
  * MAIN SCRIPT - KHOÁNG SẢN RẠNG ĐÔNG
  * -----------------------------------------------------------
- * 1. Global Setup (Navbar, Mobile Menu)
- * 2. Data Rendering Functions (Company, Stats, Products, etc.)
- * 3. UI Logic (Sliders, Animations)
- * 4. Initialization (DOMContentLoaded)
+ * Updated: Đã loại bỏ logic Menu cũ (được xử lý bởi navbar-component.js)
  */
 
 /* ==========================================================================
-   1. GLOBAL SETUP (NAVBAR & MOBILE MENU)
+   1. GLOBAL UI EFFECTS
    ========================================================================== */
-const navbar = document.querySelector(".navbar");
-const menuBtn = document.querySelector("#mobile-menu");
-const menuList = document.querySelector(".navbar__links");
-const navLinks = document.querySelectorAll(".navbar__link");
 
-// Sticky Navbar Effect
+// Sticky Navbar Effect (Hiệu ứng cuộn đổi màu menu)
+// Lưu ý: Navbar được sinh ra bởi component, nên ta cần bắt sự kiện scroll window
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 0) {
-    navbar.classList.add("navbar--sticky");
-  } else {
-    navbar.classList.remove("navbar--sticky");
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    if (window.scrollY > 0) {
+      navbar.classList.add("navbar--sticky");
+    } else {
+      navbar.classList.remove("navbar--sticky");
+    }
   }
 });
-
-// Mobile Menu Toggle
-if (menuBtn) {
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("is-active");
-    menuList.classList.toggle("active");
-  });
-}
-
-// Close Menu when clicking a link
-if (navLinks) {
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      menuBtn.classList.remove("is-active");
-      menuList.classList.remove("active");
-    });
-  });
-}
 
 /* ==========================================================================
    2. DATA RENDERING FUNCTIONS
@@ -98,12 +77,12 @@ function renderCompanyInfo() {
       .join("");
   }
 
-  // D. Contact Section (Trang chủ hoặc trang Contact)
+  // D. Contact Section
   const contactValues = document.querySelectorAll(".contact__value");
   if (contactValues.length >= 3) {
-    contactValues[0].innerText = companyInfoDB.hotlineDisplay; // Hotline
-    contactValues[1].innerText = companyInfoDB.email; // Email
-    contactValues[2].innerText = companyInfoDB.address; // Address
+    contactValues[0].innerText = companyInfoDB.hotlineDisplay;
+    contactValues[1].innerText = companyInfoDB.email;
+    contactValues[2].innerText = companyInfoDB.address;
   }
 }
 
@@ -139,12 +118,11 @@ function renderStats() {
     })
     .join("");
 
-  // Khởi tạo Animation sau khi render
   initStatsObserver();
 }
 
 /**
- * Render danh sách sản phẩm (Products Section)
+ * Render danh sách sản phẩm (Products Section - Home)
  * Dữ liệu từ: assets/js/products/products-db.js
  */
 function renderProductCards() {
@@ -193,8 +171,7 @@ function renderProductCards() {
 }
 
 /**
- * Render ý kiến khách hàng (Testimonials Section)
- * Dữ liệu từ: assets/js/testimonials/testimonials-db.js
+ * Render ý kiến khách hàng
  */
 function renderTestimonials() {
   const swiperWrapper = document.querySelector(
@@ -228,8 +205,7 @@ function renderTestimonials() {
 }
 
 /**
- * Render danh sách dự án (Projects List)
- * Dữ liệu từ: assets/js/projects/projects-db.js
+ * Render danh sách dự án
  */
 function renderProjects() {
   const container = document.querySelector(".project-list");
@@ -248,8 +224,7 @@ function renderProjects() {
 }
 
 /**
- * Render hình ảnh dự án (Project Gallery)
- * Dữ liệu từ: assets/js/projects/projects-db.js (projectGalleryDB)
+ * Render hình ảnh dự án
  */
 function renderProjectGallery() {
   const container = document.querySelector(".projects-showcase__gallery");
@@ -278,8 +253,7 @@ function renderProjectGallery() {
 }
 
 /**
- * Render tin tức (News Section)
- * Dữ liệu từ: assets/js/news/news-db.js
+ * Render tin tức
  */
 function renderNews() {
   const container = document.querySelector(".news__grid");
@@ -307,8 +281,6 @@ function renderNews() {
 /* ==========================================================================
    3. UI LOGIC (SLIDERS & ANIMATIONS)
    ========================================================================== */
-
-// --- A. Swiper Initializers ---
 
 function initProductSwiper() {
   if (document.querySelector(".product-swiper")) {
@@ -357,10 +329,12 @@ function initTestimonialSwiper() {
   }
 }
 
-// --- B. Hero Slider Logic ---
 function initHeroSlider() {
   const heroSection = document.querySelector(".hero");
   if (!heroSection) return;
+
+  // Nếu đã dùng Navbar Component, Hero không cần padding-top đặc biệt
+  // nhưng cần đảm bảo Slider nằm dưới Navbar.
 
   const heroImages = [
     "https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=1171&auto=format&fit=crop",
@@ -369,7 +343,6 @@ function initHeroSlider() {
     "https://media.istockphoto.com/id/1040410620/vi/anh/%C4%91%E1%BB%95-b%C3%AA-t%C3%B4ng-l%C3%AAn-n%E1%BB%81n-m%C3%B3ng-t%C3%B2a-nh%C3%A0.jpg?s=2048x2048&w=is&k=20&c=lWOqcEL_BrrIhjL3H9SJHUTSuuSxDLDMS09QeVhRHDs=",
   ];
 
-  // Tạo HTML cho slider
   const container = document.createElement("div");
   container.className = "hero-slider-container";
 
@@ -380,7 +353,6 @@ function initHeroSlider() {
     container.appendChild(slide);
   });
 
-  // Thêm nút điều hướng
   const prevBtn = document.createElement("button");
   prevBtn.className = "slider-nav-btn slider-btn-prev";
   prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
@@ -389,11 +361,11 @@ function initHeroSlider() {
   nextBtn.className = "slider-nav-btn slider-btn-next";
   nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
 
+  // Chèn vào đầu hero (để nằm dưới content)
   heroSection.insertBefore(container, heroSection.firstChild);
   heroSection.appendChild(prevBtn);
   heroSection.appendChild(nextBtn);
 
-  // Logic chuyển slide
   let currentIndex = 0;
   const slides = document.querySelectorAll(".hero-slide");
   let isAnimating = false;
@@ -407,21 +379,18 @@ function initHeroSlider() {
     const nextSlide = slides[nextIndex];
     const direction = nextIndex > currentIndex ? "next" : "prev";
 
-    // Reset vị trí
     slides.forEach((s) => {
       if (s !== currentSlide && s !== nextSlide) {
-        s.className = "hero-slide"; // Reset class
+        s.className = "hero-slide";
         s.style.transform = "translateX(100%)";
       }
     });
 
-    // Setup vị trí ban đầu cho slide mới
     nextSlide.style.transition = "none";
     nextSlide.style.transform =
       direction === "next" ? "translateX(100%)" : "translateX(-100%)";
-    void nextSlide.offsetWidth; // Force Reflow
+    void nextSlide.offsetWidth;
 
-    // Animation
     nextSlide.style.transition = "transform 1.5s ease-in-out";
     currentSlide.style.transition = "transform 1.5s ease-in-out";
 
@@ -454,7 +423,6 @@ function initHeroSlider() {
   interval = setInterval(next, 5000);
 }
 
-// --- C. About Slider Logic ---
 function initAboutSlider() {
   const slides = document.querySelectorAll(".about-slide-item");
   if (slides.length > 0) {
@@ -467,7 +435,6 @@ function initAboutSlider() {
   }
 }
 
-// --- D. Stats Counter Animation ---
 function initStatsObserver() {
   const statsSection = document.querySelector(".stats");
   const counters = document.querySelectorAll(".counter");
@@ -506,12 +473,12 @@ function initStatsObserver() {
 }
 
 /* ==========================================================================
-   4. INITIALIZATION (CHẠY CHƯƠNG TRÌNH)
+   4. INITIALIZATION
    ========================================================================== */
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Render Common & Data Driven Sections
+  // 1. Render Data
   renderCompanyInfo();
-  renderStats(); // Stats Animation sẽ tự kích hoạt sau khi render
+  renderStats();
 
   if (typeof productsDB !== "undefined") renderProductCards();
   if (typeof testimonialsDB !== "undefined") renderTestimonials();
@@ -519,7 +486,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typeof projectGalleryDB !== "undefined") renderProjectGallery();
   if (typeof newsDB !== "undefined") renderNews();
 
-  // 2. Init Interactive Elements
+  // 2. Init UI Logic
   initHeroSlider();
   initAboutSlider();
 });

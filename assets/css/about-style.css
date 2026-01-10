@@ -1,0 +1,555 @@
+/* ==========================================================================
+   STYLE RIÊNG CHO TRANG GIỚI THIỆU (about.html)
+   File: assets/css/about-style.css
+   ========================================================================== */
+
+/* --- 0. CÁC CLASS TIỆN ÍCH (UTILITIES) --- */
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Giảm gap để thẻ trông gọn hơn */
+}
+
+/* --- TINH CHỈNH CARD GIÁ TRỊ CỐT LÕI (Gọn & Tinh tế) --- */
+.grid-4-col .card-base {
+  padding: 24px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.grid-4-col .icon-box-lg i {
+  font-size: 2.5rem; /* Icon nhỏ lại chút cho tinh tế */
+}
+
+.grid-4-col .icon-box-lg {
+  margin-bottom: 12px;
+}
+
+.grid-4-col h3 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grid-4-col p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+/* --- UTILS TEXT & SPACING --- */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-3 {
+  margin-bottom: 16px;
+}
+.mb-4 {
+  margin-bottom: 24px;
+}
+.mb-5 {
+  margin-bottom: 40px;
+}
+.mt-3 {
+  margin-top: 16px;
+}
+
+.p-4 {
+  padding: 30px;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+.text-desc {
+  color: var(--text-desc);
+  line-height: 1.6;
+}
+
+/* Icon Box Animation */
+.icon-box-lg {
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.card-base:hover .icon-box-lg {
+  transform: scale(1.1);
+}
+
+/* --- 1. INTRO SECTION (COLLAGE 3 ẢNH - HERO LAYOUT) --- */
+.about-intro {
+  display: grid;
+  /* Tỷ lệ 4 phần Text - 6 phần Ảnh */
+  grid-template-columns: 4fr 6fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.about-intro__content {
+  padding-right: 0;
+}
+
+/* BỐ CỤC 3 ẢNH (1 Lớn - 2 Nhỏ) */
+.intro-images {
+  display: grid;
+  /* Cột 1 (Hero) lớn gấp 1.4 lần cột 2 */
+  grid-template-columns: 1.4fr 1fr;
+  /* 2 hàng, mỗi hàng cao 210px (Tổng cao ~430px) */
+  grid-template-rows: 210px 210px;
+  gap: 15px;
+}
+
+/* Khung bao ngoài ảnh (Wrapper) */
+.intro-img-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Cắt ảnh khi zoom */
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+/* --- CHÌA KHÓA CỦA LAYOUT 3 ẢNH --- */
+/* Ảnh đầu tiên (Hero) chiếm trọn cột 1 và kéo dài 2 hàng */
+.intro-img-item:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+/* Các ảnh sau (2, 3) tự động lấp vào cột bên phải */
+
+/* Style cho ảnh bên trong */
+.intro-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth motion */
+  display: block;
+}
+
+/* Hiệu ứng Zoom khi hover */
+.intro-img-item:hover img {
+  transform: scale(1.12);
+}
+
+/* --- 2. LỊCH SỬ HÌNH THÀNH (TIMELINE) --- */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: var(--border-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  padding: 10px 50px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: -12px;
+  background-color: #fff;
+  border: 5px solid var(--secondary-color);
+  top: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+  background-color: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+.timeline-left {
+  left: 0;
+  text-align: right;
+}
+.timeline-right {
+  left: 50%;
+  text-align: left;
+}
+.timeline-right::after {
+  left: -12px;
+}
+
+.timeline-content {
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.timeline-content h4,
+.timeline-content p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Số năm nền */
+.timeline-year {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(15, 79, 140, 0.08);
+  position: absolute;
+  top: 0px;
+  line-height: 1;
+  z-index: 0;
+  user-select: none;
+}
+
+.timeline-left .timeline-year {
+  left: 15px;
+  right: auto;
+}
+.timeline-right .timeline-year {
+  right: 15px;
+  left: auto;
+}
+
+/* --- 3. BAN LÃNH ĐẠO (TEAM - PROFESSIONAL STYLE) --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 16px; /* Bo góc mềm mại hơn */
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Bóng mờ nhẹ ban đầu */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Hiệu ứng nảy nhẹ */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Viền mờ siêu nhẹ */
+  position: relative;
+  height: 100%;
+}
+
+/* Hiệu ứng khi Hover vào thẻ */
+.team-card:hover {
+  transform: translateY(-10px); /* Bay lên cao hơn */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Bóng sâu hơn */
+  border-color: transparent;
+}
+
+/* Tạo thanh màu cam xuất hiện dưới đáy khi hover */
+.team-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--secondary-color);
+  transform: scaleX(0); /* Ẩn đi ban đầu */
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover::after {
+  transform: scaleX(1); /* Hiện ra khi hover */
+}
+
+/* Wrapper cho ảnh để xử lý zoom */
+.team-img-wrapper {
+  width: 100%;
+  height: 350px; /* Chiều cao ảnh cố định */
+  overflow: hidden;
+  position: relative;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Luôn lấy phần đầu/mặt */
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: grayscale(20%); /* Làm ảnh hơi xám nhẹ cho sang (tùy chọn) */
+}
+
+/* Hover: Zoom ảnh và trả lại màu sắc */
+.team-card:hover .team-img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+.team-info {
+  padding: 24px 20px 30px; /* Padding rộng rãi */
+  position: relative;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.team-name {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-weight: 800; /* Font đậm */
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.team-role {
+  font-size: 1.1rem; /* Chữ nhỏ */
+  color: var(--text-desc);
+  font-weight: 600;
+  text-transform: uppercase; /* Viết hoa toàn bộ */
+  letter-spacing: 1.5px; /* Giãn chữ ra cho thoáng */
+  display: block;
+  opacity: 0.8;
+}
+
+/* Dấu gạch nhỏ trang trí giữa tên và chức vụ */
+.team-role::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--border-color);
+  margin: 0 auto 10px; /* Căn giữa */
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.team-card:hover .team-role::before {
+  width: 50px; /* Dài ra khi hover */
+  background-color: var(--secondary-color); /* Đổi màu cam */
+}
+
+/* ==========================================================================
+   4. THƯ VIỆN ẢNH (GALLERY SLIDER)
+   ========================================================================== */
+
+.gallery-slider-viewport {
+  overflow-x: auto; /* Cho phép cuộn */
+  overflow-y: hidden;
+  width: 100%;
+  position: relative;
+  padding: 20px 0 40px;
+  cursor: grab; /* Con trỏ hình bàn tay mở */
+
+  /* Ẩn thanh cuộn (Scrollbar) cho đẹp */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  scroll-behavior: auto;
+}
+
+/* Ẩn thanh cuộn trên Chrome/Safari/Edge */
+.gallery-slider-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* Khi đang giữ chuột kéo -> Đổi con trỏ thành nắm tay */
+.gallery-slider-viewport.active {
+  cursor: grabbing;
+}
+
+/* Đường ray chứa ảnh */
+.gallery-track {
+  display: flex;
+  width: max-content; /* Để nội dung dài ra theo chiều ngang */
+  gap: 0; /* Gap xử lý bằng padding item */
+}
+
+/* Item trong slider */
+.gallery-slide-item {
+  width: 300px; /* Kích thước cố định hoặc % tùy ý */
+  padding: 0 10px;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Không bị co lại */
+  user-select: none; /* Không cho bôi đen khi kéo */
+}
+
+/* Khung ảnh bên trong */
+.gallery-card {
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--box-shadow);
+  /* Bỏ pointer-events để tránh click nhầm vào ảnh khi đang kéo */
+  pointer-events: none;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  pointer-events: none; /* Quan trọng: Chặn kéo ảnh (drag image) mặc định của trình duyệt */
+}
+
+.section-padding {
+  padding: 64px 0;
+}
+/* ==========================================================================
+   RESPONSIVE (MOBILE & TABLET)
+   (Đã gộp gọn gàng để tránh trùng lặp)
+   ========================================================================== */
+
+/* --- Tablet (992px trở xuống) --- */
+@media (max-width: 992px) {
+  /* Layout Intro: Về 1 cột */
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-intro__content {
+    padding-right: 0;
+  }
+
+  /* Intro Images: Reset về 2 cột đều nhau (hoặc giữ tỷ lệ tùy ý) */
+  .intro-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px; /* Chiều cao auto cho hàng */
+  }
+  /* Bỏ span row của ảnh 1 trên tablet để tránh vỡ layout nếu ảnh không đủ */
+  .intro-img-item:nth-child(1) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Grid chung: Về 2 cột */
+  .team-grid,
+  .grid-4-col,
+  .about-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Timeline: Về dạng dọc 1 bên */
+  .timeline::after {
+    left: 31px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .timeline-item::after {
+    left: 19px;
+    right: auto;
+  }
+  .timeline-left,
+  .timeline-right {
+    left: 0;
+    text-align: left;
+  }
+  .timeline-right::after {
+    left: 19px;
+  }
+  .timeline-left .timeline-year,
+  .timeline-right .timeline-year {
+    left: auto;
+    right: 20px;
+  }
+}
+
+/* --- Mobile (576px trở xuống) --- */
+@media (max-width: 576px) {
+  /* Tất cả về 1 cột */
+  .team-grid,
+  .grid-4-col,
+  .about-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Intro Images: 1 cột */
+  .intro-images {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+    gap: 15px;
+  }
+}
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .team-img-wrapper {
+    height: 320px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-img-wrapper {
+    height: 350px;
+  }
+}
+/* Responsive */
+@media (max-width: 992px) {
+  .gallery-slide-item {
+    width: 280px;
+  }
+  .gallery-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-slide-item {
+    width: 240px;
+  }
+  .gallery-card {
+    height: 220px;
+  }
+}
+/* --- RESPONSIVE SLIDER --- */
+
+/* Tablet: Hiển thị 2 ảnh */
+@media (max-width: 992px) {
+  .gallery-slide-item {
+    min-width: 50%;
+  }
+  .gallery-card {
+    height: 250px;
+  }
+}

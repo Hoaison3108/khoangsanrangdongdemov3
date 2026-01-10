@@ -1,0 +1,94 @@
+/* ==========================================================================
+   COMPONENT STYLES (Dùng chung cho các trang con)
+   File: assets/css/component-style.css
+   ========================================================================== */
+
+/* --- 1. NAVBAR FIX (Cho trang con không có Hero Image) --- */
+.navbar--solid {
+  background-color: var(--primary-color) !important; /* Luôn giữ màu nền xanh */
+  padding: 16px 0 !important; /* Giữ kích thước gọn gàng */
+  box-shadow: var(--box-shadow);
+}
+
+.navbar--solid .logo-img {
+  height: 40px !important;
+}
+
+/* --- 2. PAGE HEADER (Tiêu đề trang) --- */
+.page-header {
+  margin-top: 0 !important;
+  padding-top: 48px;
+  padding-bottom: 16px;
+  background-color: var(--bg-white); /* Hoặc màu nền nhẹ tùy chọn */
+}
+
+.page-header .section-line {
+  /* width: 96px;
+  height: 4px;
+  background-color: var(--secondary-color); */
+  margin: -46px auto 21px; /* Căn chỉnh lại khoảng cách */
+}
+
+/* --- 3. BREADCRUMBS (Thanh điều hướng) --- */
+.breadcrumb-section {
+  background-color: var(--bg-white);
+  padding: 12px 0;
+  margin-top: 75px; /* Đẩy xuống tránh Navbar che mất */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb li {
+  font-size: 1.3rem;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+}
+
+/* Dấu gạch chéo ngăn cách */
+.breadcrumb li + li::before {
+  content: "/";
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.breadcrumb li a {
+  color: var(--text-desc);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+  color: var(--primary-color);
+}
+
+/* Mục hiện tại */
+.breadcrumb li span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* --- 4. TIỆN ÍCH CHUNG (Utilities) --- */
+.section-padding {
+  padding: 96px 0;
+}
+
+/* Responsive cho Component */
+@media (max-width: 576px) {
+  .breadcrumb-section {
+    margin-top: 60px; /* Mobile navbar nhỏ hơn */
+    padding: 10px 0;
+  }
+  .breadcrumb li {
+    font-size: 1.1rem;
+  }
+}

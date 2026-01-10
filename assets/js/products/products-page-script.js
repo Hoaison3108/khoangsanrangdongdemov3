@@ -1,44 +1,45 @@
 /* ==========================================================================
-   SCRIPT TRANG DANH SÁCH SẢN PHẨM (products.html)
+   SCRIPT TRANG DANH SÁCH SẢN PHẨM (STRUCTURED DATA VERSION)
+   File: assets/js/products/products-page-script.js
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("all-products-container");
 
-  // Kiểm tra DB
-  if (typeof productsDetailDB === "undefined" || !container) {
+  if (!container || typeof productsDetailDB === "undefined") {
     console.error("Lỗi: Không tìm thấy DB hoặc Container.");
     return;
   }
 
-  // Xóa nội dung cũ (nếu có)
-  container.innerHTML = "";
+  const productsHTML = productsDetailDB
+    .map((product) => {
+      // Badge
+      const badgeHTML = product.badge
+        ? `<span class="badge ${product.badge.class}">${product.badge.text}</span>`
+        : "";
 
-  // Duyệt qua DB và tạo HTML
-  productsDetailDB.forEach((product) => {
-    // Xử lý Badge
-    let badgeHTML = product.badge
-      ? `<span class="badge ${product.badge.class}">${product.badge.text}</span>`
-      : "";
+      // Image
+      const imageSrc =
+        product.images && product.images.length > 0
+          ? product.images[0]
+          : "https://via.placeholder.com/400";
 
-    // Xử lý ảnh (Lấy ảnh đầu tiên trong mảng images)
-    let imageSrc =
-      product.images && product.images.length > 0
-        ? product.images[0]
-        : "https://via.placeholder.com/400";
+      // Specs (Lấy từ mảng tabs.specs mới)
+      let specsHTML = "";
+      if (
+        product.tabs &&
+        Array.isArray(product.tabs.specs) &&
+        product.tabs.specs.length > 0
+      ) {
+        // Lấy 2 thông số đầu tiên
+        const specItems = product.tabs.specs
+          .slice(0, 2)
+          .map((item) => `<li>${item.label}: ${item.value}</li>`)
+          .join("");
+        specsHTML = `<ul class="product-card__specs">${specItems}</ul>`;
+      }
 
-    // Xử lý Specs (Lấy 2 dòng đầu làm tóm tắt)
-    let specsHTML = "";
-    if (product.specs && product.specs.length > 0) {
-      specsHTML = `<ul class="product-card__specs">`;
-      // Chỉ lấy tối đa 2 thông số để thẻ không quá dài
-      product.specs.slice(0, 2).forEach((spec) => {
-        specsHTML += `<li>${spec}</li>`;
-      });
-      specsHTML += `</ul>`;
-    }
-
-    const html = `
+      return `
             <div class="product-grid-item">
                 <article class="product-card card-base">
                     <div class="product-card__media">
@@ -56,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </article>
             </div>
         `;
+    })
+    .join("");
 
-    container.innerHTML += html;
-  });
+  container.innerHTML = productsHTML;
 });

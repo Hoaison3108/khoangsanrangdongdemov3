@@ -1,111 +1,26 @@
-/* =========================================
-   STYLE TRANG DANH SÁCH SẢN PHẨM (products.html)
-   ========================================= */
-/* =========================================
-   BREADCRUMB (THANH ĐIỀU HƯỚNG)
-   ========================================= */
-/* =========================================
-   STYLE TRANG DANH SÁCH SẢN PHẨM (products.html)
-   ========================================= */
-
-/* --- BREADCRUMBS --- */
-.breadcrumb-section {
-  background-color: var(--bg-white); /* Màu nền xám nhẹ */
-  padding: 12px 0;
-  /* Đẩy xuống để tránh Navbar che mất (vì navbar fixed) */
-  margin-top: 75px;
-  border-bottom: 1px solid var(--border-color);
+/* ==========================================================================
+   STYLE RIÊNG CHO MODULE SẢN PHẨM
+   File: assets/css/products-style.css
+   ========================================================================== */
+.section-padding {
+  padding: 64px 0 96px;
 }
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.breadcrumb li {
-  font-size: 1.3rem;
-  color: var(--text-body);
-  display: flex; /* Để căn giữa icon và text nếu có */
-  align-items: center;
-}
-
-/* Dấu gạch chéo ngăn cách */
-.breadcrumb li + li::before {
-  content: "/";
-  padding: 0 10px;
-  color: #ccc;
-  font-size: 1.1rem;
-}
-
-.breadcrumb li a {
-  color: var(--text-desc);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.breadcrumb li a:hover {
-  color: var(--primary-color);
-}
-
-/* Mục hiện tại (trang đang xem) */
-.breadcrumb li span {
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-/* Header trang con */
-.page-header {
-  margin-top: 0 !important;
-  padding-top: 40px;
-  padding-bottom: 30px;
-}
-.page-header .section-line {
-  width: 96px;
-  height: 4px;
-  background-color: var(--secondary-color);
-  margin: -42px auto 21px;
-}
-/* Lưới sản phẩm */
+/* --- 1. DANH SÁCH SẢN PHẨM (Grid Layout) --- */
 .products-grid {
   display: grid;
-  /* Chia 3 cột trên màn hình lớn */
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* Item trong lưới */
 .product-grid-item {
   display: flex; /* Để thẻ con bung chiều cao */
 }
 
-/* Tinh chỉnh thẻ Card khi nằm trong lưới */
 .products-grid .product-card {
   height: 100%; /* Đảm bảo các thẻ cao bằng nhau */
 }
 
-/* =========================================
-   STYLE TRANG CHI TIẾT SẢN PHẨM
-   File: assets/css/products-style.css
-   ========================================= */
-/* =========================================
-   FIX NAVBAR CHO TRANG CON (KHÔNG CÓ HERO IMAGE)
-   ========================================= */
-.navbar--solid {
-  background-color: var(--primary-color) !important; /* Luôn giữ màu nền xanh */
-  padding: 16px 0 !important; /* Giữ kích thước gọn gàng như khi đang scroll */
-  box-shadow: var(--box-shadow);
-}
-
-/* Đảm bảo logo hiển thị kích thước nhỏ gọn luôn */
-.navbar--solid .logo-img {
-  height: 40px !important;
-}
-
-/* --- 1. LAYOUT & CONTAINER --- */
+/* --- 2. CHI TIẾT SẢN PHẨM (Layout) --- */
 .product-detail {
   margin-top: 0 !important;
   padding-top: 40px;
@@ -114,10 +29,10 @@
 .product-detail-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Chia 2 cột 50% - 50% */
-  gap: 60px; /* Khoảng cách giữa 2 cột */
+  gap: 60px;
 }
 
-/* --- 2. CỘT TRÁI: GALLERY ẢNH --- */
+/* --- 3. GALLERY ẢNH (Cột trái) --- */
 .pd-gallery__main {
   width: 100%;
   height: 450px;
@@ -133,17 +48,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease; /* Hiệu ứng mờ khi đổi ảnh */
+  transition: opacity 0.3s ease;
 }
 
 .pd-gallery__thumbs {
   display: flex;
   gap: 12px;
-  overflow-x: auto; /* Cho phép cuộn ngang nếu quá nhiều ảnh */
+  overflow-x: auto;
   padding-bottom: 5px;
 }
 
-/* Ẩn thanh cuộn của thumbs nhưng vẫn cho cuộn */
+/* Scrollbar cho thumbs */
 .pd-gallery__thumbs::-webkit-scrollbar {
   height: 4px;
 }
@@ -161,20 +76,19 @@
   border: 2px solid transparent;
   transition: all 0.3s ease;
   opacity: 0.6;
-  flex-shrink: 0; /* Không bị co méo khi nhiều ảnh */
+  flex-shrink: 0;
 }
 
 .thumb-img:hover {
   opacity: 1;
 }
-
 .thumb-img.active {
   border-color: var(--primary-color);
   opacity: 1;
   transform: translateY(-2px);
 }
 
-/* --- 3. CỘT PHẢI: THÔNG TIN SẢN PHẨM --- */
+/* --- 4. THÔNG TIN SẢN PHẨM (Cột phải) --- */
 .pd-info {
   display: flex;
   flex-direction: column;
@@ -215,14 +129,12 @@
   text-align: justify;
 }
 
-/* Các nút bấm (Actions) */
 .pd-info__actions {
   display: flex;
   gap: 16px;
   margin-bottom: 40px;
 }
 
-/* Style riêng cho nút Catalogue (Secondary Button đặc biệt) */
 .btn--catalogue {
   border-color: var(--primary-color);
   color: var(--primary-color);
@@ -233,9 +145,9 @@
   color: var(--bg-white);
 }
 
-/* --- 4. TABS NỘI DUNG --- */
+/* --- 5. TABS NỘI DUNG --- */
 .pd-tabs {
-  margin-top: auto; /* Đẩy xuống dưới nếu nội dung trên ngắn */
+  margin-top: auto;
 }
 
 .pd-tabs__header {
@@ -262,12 +174,10 @@
 .tab-btn:hover {
   color: var(--primary-color);
 }
-
 .tab-btn.active {
   color: var(--primary-color);
 }
 
-/* Gạch chân màu chạy dưới tab */
 .tab-btn.active::after {
   content: "";
   position: absolute;
@@ -283,16 +193,10 @@
   color: var(--text-body);
   line-height: 1.8;
   min-height: 200px;
-  /* Hiệu ứng hiện dần */
   animation: fadeIn 0.5s ease;
 }
 
-/* =========================================
-   STYLE CHO NỘI DUNG ĐƯỢC INJECT TỪ JS (DB)
-   (Typography, List, Table)
-   ========================================= */
-
-/* A. Typography */
+/* --- 6. NỘI DUNG INJECT TỪ JS (Typography, List, Table) --- */
 .detail-heading {
   font-size: 2rem;
   font-weight: 700;
@@ -317,7 +221,6 @@
   margin-top: 16px;
 }
 
-/* B. Danh sách (List) - Dùng dấu tích ✓ */
 .detail-list {
   margin-top: 10px;
   list-style: none;
@@ -333,8 +236,7 @@
 }
 
 .detail-list li::before {
-  content: "✓"; /* Dấu tích xanh */
-  /* content: "•";  <-- Nếu muốn đổi thành dấu chấm tròn thì dùng cái này */
+  content: "✓";
   color: var(--secondary-color);
   font-weight: bold;
   font-size: 1.6rem;
@@ -349,9 +251,8 @@
   margin-right: 5px;
 }
 
-/* C. Bảng thông số (Table) */
 .table-responsive {
-  overflow-x: auto; /* Cho phép cuộn ngang bảng trên mobile */
+  overflow-x: auto;
   margin-top: 16px;
   border-radius: 4px;
 }
@@ -371,7 +272,7 @@
   padding: 12px 16px;
   text-align: left;
   border-bottom: 2px solid var(--border-color);
-  white-space: nowrap; /* Giữ tiêu đề không bị xuống dòng */
+  white-space: nowrap;
 }
 
 .specs-table td {
@@ -379,16 +280,13 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Zebra Striping (Màu xen kẽ cho dòng chẵn) */
 .specs-table tr:nth-child(even) {
   background-color: #fcfcfc;
 }
-
 .specs-table tr:hover {
   background-color: var(--bg-blue-light);
 }
 
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -400,21 +298,29 @@
   }
 }
 
-/* =========================================
-   5. RESPONSIVE (MOBILE & TABLET)
-   ========================================= */
+/* --- 7. RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   .product-detail-container {
-    grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .pd-gallery__main {
     height: 350px;
   }
-
   .pd-info__title {
     font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -422,47 +328,15 @@
   .pd-gallery__main {
     height: 250px;
   }
-
   .pd-info__actions {
-    flex-direction: column; /* Nút xếp dọc */
+    flex-direction: column;
   }
-
   .pd-tabs__header {
     gap: 20px;
-    overflow-x: auto; /* Cho phép cuộn ngang tab */
+    overflow-x: auto;
     padding-bottom: 5px;
   }
-
-  /* Ẩn thanh cuộn của tab */
   .pd-tabs__header::-webkit-scrollbar {
     height: 0px;
-  }
-}
-/* Responsive: Trên mobile có thể giảm size chút */
-@media (max-width: 576px) {
-  .breadcrumbs {
-    font-size: 1.1rem;
-  }
-}
-/* RESPONSIVE CHO LƯỚI */
-@media (max-width: 1024px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cột trên Tablet */
-  }
-}
-
-@media (max-width: 600px) {
-  .products-grid {
-    grid-template-columns: 1fr; /* 1 cột trên Mobile */
-  }
-}
-/* Responsive cho Breadcrumb */
-@media (max-width: 576px) {
-  .breadcrumb-section {
-    margin-top: 60px; /* Mobile navbar nhỏ hơn */
-    padding: 10px 0;
-  }
-  .breadcrumb li {
-    font-size: 1.1rem; /* Chữ nhỏ hơn trên mobile */
   }
 }

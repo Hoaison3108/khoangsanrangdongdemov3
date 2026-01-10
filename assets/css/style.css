@@ -125,6 +125,7 @@ ul {
   font-weight: 700;
   color: var(--text-heading);
 }
+
 .text-desc {
   font-size: 1.4rem;
   color: var(--text-body);
@@ -141,7 +142,7 @@ ul {
 
 /* Section Header Shared */
 .section-header {
-  margin-bottom: 64px;
+  /* margin-bottom: 64px; */
   text-align: center;
 }
 .section-line {
